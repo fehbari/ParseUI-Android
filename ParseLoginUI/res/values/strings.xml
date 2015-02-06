@@ -5,7 +5,7 @@
     <string name="com_parse_ui_username_input_hint">Username</string>
     <string name="com_parse_ui_password_input_hint">Password</string>
     <string name="com_parse_ui_forgot_password_button_label"><u>Forgot password?</u></string>
-    <string name="com_parse_ui_parse_login_button_label">LOGIN</string>
+    <string name="com_parse_ui_parse_login_button_label">LOG IN</string>
     <string name="com_parse_ui_parse_signup_button_label">SIGN UP</string>
     <string name="com_parse_ui_facebook_login_button_label">Login with Facebook</string>
     <string name="com_parse_ui_twitter_login_button_label">Login with Twitter</string>
