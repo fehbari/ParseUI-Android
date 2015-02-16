@@ -6,23 +6,23 @@
 
     <TextView
         android:id="@+id/login_help_instructions"
+        style="@style/ParseLoginUI.TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ParseLoginUI.TextView"
         android:gravity="center"
         android:text="@string/com_parse_ui_login_help_instructions" />
 
     <EditText
         android:id="@+id/login_help_email_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/com_parse_ui_xlarge_vertical_spacing"
+        style="@style/ParseLoginUI.EditText"
+        android:layout_marginTop="@dimen/com_parse_ui_small_vertical_spacing"
         android:hint="@string/com_parse_ui_login_help_email_input_hint"
         android:inputType="textEmailAddress"></EditText>
 
     <Button
         android:id="@+id/login_help_submit"
         style="@style/ParseLoginUI.Button"
-        android:layout_marginTop="@dimen/com_parse_ui_xlarge_vertical_spacing"
+        android:layout_width="164dp"
+        android:layout_marginTop="@dimen/com_parse_ui_large_vertical_spacing"
         android:text="@string/com_parse_ui_login_help_submit_button_label" />
 </LinearLayout>

@@ -1,7 +1,26 @@
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/app_logo"
-    android:layout_gravity="center"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:src="@drawable/com_parse_ui_app_logo"
-    android:contentDescription="@string/com_parse_ui_logo_content_description" />
+    android:orientation="vertical">
+
+    <com.parse.ui.ParseTextView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="78dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/parse_app_logo"
+        android:textColor="@color/com_parse_ui_brand_color"
+        android:textSize="70sp" />
+
+    <TextView
+        android:id="@+id/login_help_instructions"
+        style="@style/ParseLoginUI.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/parse_app_name"
+        android:textColor="@color/com_parse_ui_light_secondary_text"
+        android:textSize="16sp" />
+
+</LinearLayout>

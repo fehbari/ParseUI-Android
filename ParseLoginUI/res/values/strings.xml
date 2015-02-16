@@ -1,17 +1,22 @@
 <resources>
 
+    <string name="parse_app_logo">&#xe61c;</string>
+    <string name="parse_app_name">SWIPES</string>
     <string name="com_parse_ui_logo_content_description">Logo</string>
     <string name="com_parse_ui_progress_dialog_text">Loading...</string>
-    <string name="com_parse_ui_username_input_hint">Username</string>
-    <string name="com_parse_ui_password_input_hint">Password</string>
-    <string name="com_parse_ui_forgot_password_button_label"><u>Forgot password?</u></string>
+    <string name="com_parse_ui_username_input_hint">USERNAME</string>
+    <string name="com_parse_ui_password_input_hint">PASSWORD</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>FORGOT PASSWORD?</b></string>
     <string name="com_parse_ui_parse_login_button_label">LOG IN</string>
+    <string name="com_parse_ui_parse_login_description">LOG IN OR REGISTER</string>
+    <string name="com_parse_ui_parse_login_facebook_description">OR LOG IN WITH</string>
     <string name="com_parse_ui_parse_signup_button_label">SIGN UP</string>
-    <string name="com_parse_ui_facebook_login_button_label">Login with Facebook</string>
-    <string name="com_parse_ui_twitter_login_button_label">Login with Twitter</string>
-    <string name="com_parse_ui_email_input_hint">Email</string>
-    <string name="com_parse_ui_confirm_password_input_hint">Re-enter password</string>
-    <string name="com_parse_ui_name_input_hint">Name</string>
+    <string name="com_parse_ui_parse_signup_description">REGISTER WITH EMAIL</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_twitter_login_button_label">TWITTER</string>
+    <string name="com_parse_ui_email_input_hint">USER EMAIL</string>
+    <string name="com_parse_ui_confirm_password_input_hint">CONFIRM PASSWORD</string>
+    <string name="com_parse_ui_name_input_hint">NAME</string>
     <string name="com_parse_ui_create_account_button_label">CREATE ACCOUNT</string>
     <string name="com_parse_ui_no_username_toast">Please enter your username</string>
     <string name="com_parse_ui_no_password_toast">Please enter your password</string>
@@ -33,9 +38,9 @@
     <string name="com_parse_ui_email_taken_toast">Email is already taken, please reset your password instead</string>
     <string name="com_parse_ui_no_name_toast">Please enter your name</string>
     <string name="com_parse_ui_signup_failed_unknown_toast">Could not sign up, please try again later</string>
-    <string name="com_parse_ui_login_help_instructions">Enter your email to recover your password</string>
-    <string name="com_parse_ui_login_help_email_input_hint">Email</string>
-    <string name="com_parse_ui_login_help_submit_button_label">Submit</string>
+    <string name="com_parse_ui_login_help_instructions">ENTER YOUR EMAIL</string>
+    <string name="com_parse_ui_login_help_email_input_hint">USER EMAIL</string>
+    <string name="com_parse_ui_login_help_submit_button_label">RESET PASSWORD</string>
     <string name="com_parse_ui_login_help_login_again_button_label">Back to Login</string>
     <string name="com_parse_ui_login_help_submit_failed_unknown">Failed to request password reset, please try again</string>
     <string name="com_parse_ui_login_help_email_sent">Please check your email for instructions on how to access your account</string>

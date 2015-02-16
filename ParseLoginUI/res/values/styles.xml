@@ -1,38 +1,42 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <style name="ParseLoginUI" />
 
-    <style name="ParseLoginUI.Button" parent="@android:style/Widget.Button">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">48dp</item>
+    <style name="ParseLoginUI.Button">
+        <item name="android:layout_width">146dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:stateListAnimator" tools:targetApi="21">@null</item>
         <item name="android:background">
             @drawable/com_parse_ui_parse_login_button_background_selector
         </item>
         <item name="android:textColor">@color/com_parse_ui_parse_login_buttons_display_text</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="ParseLoginUI.Button.ThirdPartyLogin" parent="ParseLoginUI.Button">
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ParseLoginUI.HelpButton" parent="@android:style/Widget.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">16dp</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:textColor">@color/com_parse_ui_parse_login_help_button_label_selector</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">
+            @color/com_parse_ui_parse_login_help_button_label_selector
+        </item>
     </style>
 
     <style name="ParseLoginUI.TextView" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@color/com_parse_ui_parse_login_display_text</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="ParseLoginUI.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:layout_height">66dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/com_parse_ui_light_secondary_text</item>
+        <item name="android:textColorHint">@color/com_parse_ui_light_hint</item>
         <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/parse_edit_text_background</item>
     </style>
 </resources>
