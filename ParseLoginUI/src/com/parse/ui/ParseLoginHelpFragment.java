@@ -22,6 +22,7 @@
 package com.parse.ui;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,6 +75,9 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
         submitButton = (Button) v.findViewById(R.id.login_help_submit);
 
         submitButton.setOnClickListener(this);
+
+        setupRippleEffect();
+
         return v;
     }
 
@@ -142,4 +146,13 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
     protected String getLogTag() {
         return LOG_TAG;
     }
+
+    private void setupRippleEffect() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int background = R.drawable.parse_button_background_ripple;
+
+            submitButton.setBackgroundResource(background);
+        }
+    }
+
 }

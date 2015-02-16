@@ -22,6 +22,7 @@
 package com.parse.ui;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -100,6 +101,8 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         facebookLoginButton = (Button) v.findViewById(R.id.facebook_login);
         twitterLoginButton = (Button) v.findViewById(R.id.twitter_login);
 
+        setupRippleEffect();
+
         if (allowParseLoginAndSignup()) {
             setUpParseLoginAndSignup();
         }
@@ -109,6 +112,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         if (allowTwitterLogin()) {
             setUpTwitterLogin();
         }
+
         return v;
     }
 
@@ -141,6 +145,17 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
     @Override
     protected String getLogTag() {
         return LOG_TAG;
+    }
+
+    private void setupRippleEffect() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int background = R.drawable.parse_button_background_ripple;
+            int facebookBackground = R.drawable.parse_facebook_button_background_ripple;
+
+            parseLoginButton.setBackgroundResource(background);
+            parseSignupButton.setBackgroundResource(background);
+            facebookLoginButton.setBackgroundResource(facebookBackground);
+        }
     }
 
     private void setUpParseLoginAndSignup() {

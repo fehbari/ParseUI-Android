@@ -22,6 +22,7 @@
 package com.parse.ui;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -107,6 +108,8 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
             createAccountButton.setText(config.getParseSignupSubmitButtonText());
         }
         createAccountButton.setOnClickListener(this);
+
+        setupRippleEffect();
 
         return v;
     }
@@ -218,6 +221,14 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
     @Override
     protected String getLogTag() {
         return LOG_TAG;
+    }
+
+    private void setupRippleEffect() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int background = R.drawable.parse_button_background_ripple;
+
+            createAccountButton.setBackgroundResource(background);
+        }
     }
 
     private void signupSuccess() {
