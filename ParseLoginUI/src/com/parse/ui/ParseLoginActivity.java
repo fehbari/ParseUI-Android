@@ -33,7 +33,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
@@ -110,10 +109,6 @@ public class ParseLoginActivity extends FragmentActivity implements
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.com_parse_ui_light_status_bar));
         }
-
-        // Hide status bar.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override
