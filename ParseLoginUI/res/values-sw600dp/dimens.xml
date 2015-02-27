@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="com_parse_ui_horizontal_margin">48dp</dimen>
+    <dimen name="com_parse_ui_vertical_margin">48dp</dimen>
+
+    <dimen name="com_parse_ui_signup_horizontal_margin">240dp</dimen>
+    <dimen name="com_parse_ui_signup_vertical_margin">48dp</dimen>
+
+</resources>

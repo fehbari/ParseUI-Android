@@ -28,30 +28,6 @@
         android:inputType="textPassword"
         android:selectAllOnFocus="true" />
 
-    <RelativeLayout
-        android:id="@+id/parse_buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/com_parse_ui_large_vertical_spacing">
+    <include layout="@layout/com_parse_ui_parse_login_buttons" />
 
-        <Button
-            android:id="@+id/parse_login_button"
-            style="@style/ParseLoginUI.Button"
-            android:layout_alignParentLeft="true"
-            android:text="@string/com_parse_ui_parse_login_button_label" />
-
-        <Button
-            android:id="@+id/parse_signup_button"
-            style="@style/ParseLoginUI.Button"
-            android:layout_alignParentRight="true"
-            android:text="@string/com_parse_ui_parse_signup_button_label" />
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/parse_login_help"
-        style="@style/ParseLoginUI.HelpButton"
-        android:layout_height="36dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="@string/com_parse_ui_forgot_password_button_label" />
 </LinearLayout>
