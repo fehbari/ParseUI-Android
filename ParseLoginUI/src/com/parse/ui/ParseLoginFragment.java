@@ -279,32 +279,40 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
                                         @Override
                                         public void onCompleted(GraphUser fbUser,
                                                                 Response response) {
-                      /*
-                        If we were able to successfully retrieve the Facebook
-                        user's name, let's set it on the fullName field.
-                        Also set the email if we can read it.
-                      */
+                                          /*
+                                            If we were able to successfully retrieve the Facebook
+                                            email, set it on the "email" and "username" fields.
+                                            Also set the gender if we can read it.
+                                          */
                                             ParseUser parseUser = ParseUser.getCurrentUser();
-                                            if (fbUser != null && parseUser != null
-                                                    && !fbUser.getName().isEmpty()) {
-                                                parseUser.put(USER_OBJECT_NAME_FIELD, fbUser.getName());
+                                            if (fbUser != null && parseUser != null) {
                                                 String email = (String) fbUser.getProperty("email");
                                                 if (email != null && !email.isEmpty()) {
-                                                    parseUser.setEmail(email);
-                                                }
-                                                parseUser.saveInBackground(new SaveCallback() {
-                                                    @Override
-                                                    public void done(ParseException e) {
-                                                        if (e != null) {
-                                                            debugLog(getString(
-                                                                    R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
-                                                                    e.toString());
-                                                        }
-                                                        loginSuccess();
+                                                    parseUser.put("email", email);
+                                                    parseUser.put("username", email);
+
+                                                    String gender = (String) fbUser.getProperty("gender");
+                                                    if (gender != null && !gender.isEmpty()) {
+                                                        parseUser.put("gender", gender);
                                                     }
-                                                });
+
+                                                    parseUser.saveInBackground(new SaveCallback() {
+                                                        @Override
+                                                        public void done(ParseException e) {
+                                                            if (e != null) {
+                                                                debugLog(getString(
+                                                                        R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
+                                                                        e.toString());
+                                                            }
+                                                            loginSuccess();
+                                                        }
+                                                    });
+                                                } else {
+                                                    loadingFinish();
+                                                }
+                                            } else {
+                                                loadingFinish();
                                             }
-                                            loginSuccess();
                                         }
                                     }
                             ).executeAsync();
