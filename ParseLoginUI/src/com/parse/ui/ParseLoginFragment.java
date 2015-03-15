@@ -44,6 +44,9 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.twitter.Twitter;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * Fragment for the user login screen.
  */
@@ -253,56 +256,63 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
             @Override
             public void onClick(View v) {
                 loadingStart(true);
-                ParseFacebookUtils.logIn(config.getFacebookLoginPermissions(),
-                        getActivity(), new LogInCallback() {
-                            @Override
-                            public void done(ParseUser user, ParseException e) {
-                                if (isActivityDestroyed()) {
-                                    return;
-                                }
+                Collection<String> permissions = config.getFacebookLoginPermissions();
+                if (permissions == null) permissions = new ArrayList<>();
+                permissions.add("email");
+                ParseFacebookUtils.logIn(permissions, getActivity(), new LogInCallback() {
+                    @Override
+                    public void done(ParseUser user, ParseException e) {
+                        if (isActivityDestroyed()) {
+                            return;
+                        }
 
-                                if (user == null) {
-                                    loadingFinish();
-                                    if (e != null) {
-                                        showToast(R.string.com_parse_ui_facebook_login_failed_toast);
-                                        debugLog(getString(R.string.com_parse_ui_login_warning_facebook_login_failed) +
-                                                e.toString());
-                                    }
-                                } else if (user.isNew()) {
-                                    Request.newMeRequest(ParseFacebookUtils.getSession(),
-                                            new Request.GraphUserCallback() {
-                                                @Override
-                                                public void onCompleted(GraphUser fbUser,
-                                                                        Response response) {
+                        if (user == null) {
+                            loadingFinish();
+                            if (e != null) {
+                                showToast(R.string.com_parse_ui_facebook_login_failed_toast);
+                                debugLog(getString(R.string.com_parse_ui_login_warning_facebook_login_failed) +
+                                        e.toString());
+                            }
+                        } else /*if (user.isNew())*/ {
+                            Request.newMeRequest(ParseFacebookUtils.getSession(),
+                                    new Request.GraphUserCallback() {
+                                        @Override
+                                        public void onCompleted(GraphUser fbUser,
+                                                                Response response) {
                       /*
                         If we were able to successfully retrieve the Facebook
                         user's name, let's set it on the fullName field.
+                        Also set the email if we can read it.
                       */
-                                                    ParseUser parseUser = ParseUser.getCurrentUser();
-                                                    if (fbUser != null && parseUser != null
-                                                            && fbUser.getName().length() > 0) {
-                                                        parseUser.put(USER_OBJECT_NAME_FIELD, fbUser.getName());
-                                                        parseUser.saveInBackground(new SaveCallback() {
-                                                            @Override
-                                                            public void done(ParseException e) {
-                                                                if (e != null) {
-                                                                    debugLog(getString(
-                                                                            R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
-                                                                            e.toString());
-                                                                }
-                                                                loginSuccess();
-                                                            }
-                                                        });
-                                                    }
-                                                    loginSuccess();
+                                            ParseUser parseUser = ParseUser.getCurrentUser();
+                                            if (fbUser != null && parseUser != null
+                                                    && !fbUser.getName().isEmpty()) {
+                                                parseUser.put(USER_OBJECT_NAME_FIELD, fbUser.getName());
+                                                String email = (String) fbUser.getProperty("email");
+                                                if (email != null && !email.isEmpty()) {
+                                                    parseUser.setEmail(email);
                                                 }
+                                                parseUser.saveInBackground(new SaveCallback() {
+                                                    @Override
+                                                    public void done(ParseException e) {
+                                                        if (e != null) {
+                                                            debugLog(getString(
+                                                                    R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
+                                                                    e.toString());
+                                                        }
+                                                        loginSuccess();
+                                                    }
+                                                });
                                             }
-                                    ).executeAsync();
-                                } else {
+                                            loginSuccess();
+                                        }
+                                    }
+                            ).executeAsync();
+                        } /*else {
                                     loginSuccess();
-                                }
-                            }
-                        });
+                                }*/
+                    }
+                });
             }
         });
     }
