@@ -171,14 +171,22 @@ public class ParseLoginActivity extends FragmentActivity implements
     }
 
     /**
-     * Called when the user successfully logs in or signs up.
+     * Called when the user successfully logs in.
      */
     @Override
     public void onLoginSuccess() {
-        // This default implementation returns to the parent activity with
-        // RESULT_OK.
-        // You can change this implementation if you want a different behavior.
         setResult(RESULT_OK);
+        finish();
+    }
+
+    /**
+     * Called when the user successfully signs up.
+     */
+    @Override
+    public void onSignupSuccess() {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(ParseExtras.EXTRA_SIGNED_UP, true);
+        setResult(RESULT_OK, resultIntent);
         finish();
     }
 

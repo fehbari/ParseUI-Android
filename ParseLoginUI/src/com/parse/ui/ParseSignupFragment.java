@@ -232,6 +232,6 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
     }
 
     private void signupSuccess() {
-        onLoginSuccessListener.onLoginSuccess();
+        onLoginSuccessListener.onSignupSuccess();
     }
 }
