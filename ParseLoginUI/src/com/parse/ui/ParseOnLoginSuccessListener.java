@@ -22,7 +22,7 @@
 package com.parse.ui;
 
 public interface ParseOnLoginSuccessListener {
-    public void onLoginSuccess();
+    public void onLoginSuccess(String email);
 
-    public void onSignupSuccess();
+    public void onSignupSuccess(String email);
 }

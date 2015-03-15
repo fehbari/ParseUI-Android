@@ -174,8 +174,11 @@ public class ParseLoginActivity extends FragmentActivity implements
      * Called when the user successfully logs in.
      */
     @Override
-    public void onLoginSuccess() {
-        setResult(RESULT_OK);
+    public void onLoginSuccess(String email) {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(ParseExtras.EXTRA_SIGNED_UP, false);
+        resultIntent.putExtra(ParseExtras.EXTRA_USER_EMAIL, email);
+        setResult(RESULT_OK, resultIntent);
         finish();
     }
 
@@ -183,9 +186,10 @@ public class ParseLoginActivity extends FragmentActivity implements
      * Called when the user successfully signs up.
      */
     @Override
-    public void onSignupSuccess() {
+    public void onSignupSuccess(String email) {
         Intent resultIntent = new Intent();
         resultIntent.putExtra(ParseExtras.EXTRA_SIGNED_UP, true);
+        resultIntent.putExtra(ParseExtras.EXTRA_USER_EMAIL, email);
         setResult(RESULT_OK, resultIntent);
         finish();
     }

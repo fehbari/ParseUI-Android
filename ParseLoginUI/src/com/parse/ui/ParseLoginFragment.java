@@ -56,8 +56,6 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         public void onSignUpClicked(String username, String password);
 
         public void onLoginHelpClicked();
-
-        public void onLoginSuccess();
     }
 
     private static final String LOG_TAG = "ParseLoginFragment";
@@ -176,7 +174,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         parseLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameField.getText().toString();
+                final String username = usernameField.getText().toString();
                 String password = passwordField.getText().toString();
 
                 if (username.length() == 0) {
@@ -194,7 +192,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
 
                             if (user != null) {
                                 loadingFinish();
-                                loginSuccess();
+                                loginSuccess(username);
                             } else {
                                 loadingFinish();
                                 if (e != null) {
@@ -286,7 +284,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
                                           */
                                             ParseUser parseUser = ParseUser.getCurrentUser();
                                             if (fbUser != null && parseUser != null) {
-                                                String email = (String) fbUser.getProperty("email");
+                                                final String email = (String) fbUser.getProperty("email");
                                                 if (email != null && !email.isEmpty()) {
                                                     parseUser.put("email", email);
                                                     parseUser.put("username", email);
@@ -304,7 +302,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
                                                                         R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
                                                                         e.toString());
                                                             }
-                                                            loginSuccess();
+                                                            loginSuccess(email);
                                                         }
                                                     });
                                                 } else {
@@ -369,12 +367,12 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
                                                     R.string.com_parse_ui_login_warning_twitter_login_user_update_failed) +
                                                     e.toString());
                                         }
-                                        loginSuccess();
+                                        loginSuccess(null);
                                     }
                                 });
                             }
                         } else {
-                            loginSuccess();
+                            loginSuccess(null);
                         }
                     }
                 });
@@ -439,8 +437,8 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         }
     }
 
-    private void loginSuccess() {
-        onLoginSuccessListener.onLoginSuccess();
+    private void loginSuccess(String email) {
+        onLoginSuccessListener.onLoginSuccess(email);
     }
 
 }

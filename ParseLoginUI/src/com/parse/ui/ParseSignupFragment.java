@@ -134,7 +134,7 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
 
     @Override
     public void onClick(View v) {
-        String username = usernameField.getText().toString();
+        final String username = usernameField.getText().toString();
         String password = passwordField.getText().toString();
         String passwordAgain = confirmPasswordField.getText().toString();
 
@@ -192,7 +192,7 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
 
                     if (e == null) {
                         loadingFinish();
-                        signupSuccess();
+                        signupSuccess(username);
                     } else {
                         loadingFinish();
                         if (e != null) {
@@ -231,7 +231,7 @@ public class ParseSignupFragment extends ParseLoginFragmentBase implements OnCli
         }
     }
 
-    private void signupSuccess() {
-        onLoginSuccessListener.onSignupSuccess();
+    private void signupSuccess(String email) {
+        onLoginSuccessListener.onSignupSuccess(email);
     }
 }
