@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <resources>
     <string name="parse_app_name">SWIPES</string>
-    <string name="com_parse_ui_logo_content_description">Logotipo</string>
-    <string name="com_parse_ui_progress_dialog_text">Carregando...</string>
+    <string name="com_parse_ui_progress_dialog_text">Carregando&#8230;</string>
     <string name="com_parse_ui_username_input_hint">NOME DE USUÁRIO</string>
     <string name="com_parse_ui_password_input_hint">SENHA</string>
     <string name="com_parse_ui_forgot_password_button_label"><b>ESQUECEU SUA SENHA?</b></string>

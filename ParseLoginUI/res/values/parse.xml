@@ -1,8 +1,7 @@
 <resources>
 
     <string name="parse_app_name">SWIPES</string>
-    <string name="com_parse_ui_logo_content_description">Logo</string>
-    <string name="com_parse_ui_progress_dialog_text">Loading...</string>
+    <string name="com_parse_ui_progress_dialog_text">Loading&#8230;</string>
     <string name="com_parse_ui_username_input_hint">USERNAME</string>
     <string name="com_parse_ui_password_input_hint">PASSWORD</string>
     <string name="com_parse_ui_forgot_password_button_label"><b>FORGOT PASSWORD?</b></string>
