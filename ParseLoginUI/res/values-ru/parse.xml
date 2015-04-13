@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Загрузка&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">ПАРОЛЬ</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>ЗАБЫЛИ ПАРОЛЬ?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">ВОЙТИ</string>
+    <string name="com_parse_ui_parse_login_description">ВОЙДИТЕ ИЛИ ЗАРЕГИСТРИРУЙТЕСЬ</string>
+    <string name="com_parse_ui_parse_login_facebook_description">ВОЙТИ С ПОМОЩЬЮ</string>
+    <string name="com_parse_ui_parse_signup_button_label">РЕГИСТРАЦИЯ</string>
+    <string name="com_parse_ui_parse_signup_description">РЕГИСТРАЦИЯ ПО ЭЛ. ПОЧТЕ</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">ВАШ ЭЛЕКТРОННЫЙ АДРЕС</string>
+    <string name="com_parse_ui_confirm_password_input_hint">ПОДТВЕРДИТЕ ПАРОЛЬ</string>
+    <string name="com_parse_ui_create_account_button_label">СОЗДАТЬ АККАУНТ</string>
+    <string name="com_parse_ui_no_email_toast">Введите адрес эл. почты</string>
+    <string name="com_parse_ui_no_password_toast">Введите пароль</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">Введеные Вами имя пользователя и пароль не совпадают</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">Не удаётся войти, пожалуйста, повторите попытку</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Не удалось войти через Facebook</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">Пароль должен содержать как минимум %d символ</item>
+        <item quantity="other">Пароль должен содержать как минимум %d символ</item>
+        <item quantity="few">Пароль должен содержать как минимум %d символа</item>
+        <item quantity="many">Пароль должен содержать как минимум %d символов</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Данное имя пользователя уже используется</string>
+    <string name="com_parse_ui_reenter_password_toast">Повторите пароль</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Пароли не совпадают, повторите попытку</string>
+    <string name="com_parse_ui_invalid_email_toast">Адрес эл. почты некорректен, исправьте его и повторите попытку</string>
+    <string name="com_parse_ui_email_taken_toast">Данный эл. адрес уже используется, советуем воспользоваться восстановлением пароля</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">Регистрация не удалась, повторите попытку позднее</string>
+    <string name="com_parse_ui_login_help_instructions">ВВЕДИТЕ ВАШ ЭЛ. АДРЕС</string>
+    <string name="com_parse_ui_login_help_email_input_hint">ВАШ ЭЛ. АДРЕС</string>
+    <string name="com_parse_ui_login_help_submit_button_label">СБРОСИТЬ ПАРОЛЬ</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">Вернуться к странице входа</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Не удалось запросить сброс пароля, повторите попытку позже</string>
+    <string name="com_parse_ui_login_help_email_sent">Инструкции по сбросу пароля отправлены на Ваш адрес эл. почты</string>
+</resources>
