@@ -2,7 +2,6 @@
 <resources>
     <string name="parse_app_name">SWIPES</string>
     <string name="com_parse_ui_progress_dialog_text">Carregando&#8230;</string>
-    <string name="com_parse_ui_username_input_hint">NOME DE USUÁRIO</string>
     <string name="com_parse_ui_password_input_hint">SENHA</string>
     <string name="com_parse_ui_forgot_password_button_label"><b>ESQUECEU SUA SENHA?</b></string>
     <string name="com_parse_ui_parse_login_button_label">ENTRAR</string>
@@ -11,17 +10,14 @@
     <string name="com_parse_ui_parse_signup_button_label">CADASTRAR</string>
     <string name="com_parse_ui_parse_signup_description">CADASTRE-SE COM EMAIL</string>
     <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
-    <string name="com_parse_ui_twitter_login_button_label">TWITTER</string>
     <string name="com_parse_ui_email_input_hint">EMAIL DO USUÁRIO</string>
     <string name="com_parse_ui_confirm_password_input_hint">CONFIRME A SENHA</string>
-    <string name="com_parse_ui_name_input_hint">NOME</string>
     <string name="com_parse_ui_create_account_button_label">CRIAR CONTA</string>
-    <string name="com_parse_ui_no_username_toast">Por favor, digite seu nome de usuário</string>
+    <string name="com_parse_ui_no_email_toast">Por favor, digite seu email</string>
     <string name="com_parse_ui_no_password_toast">Por favor, digite sua senha</string>
     <string name="com_parse_ui_parse_login_invalid_credentials_toast">O usuário e senha digitados não correspondem</string>
     <string name="com_parse_ui_parse_login_failed_unknown_toast">Não foi possível entrar. Por favor, tente novamente mais tarde.</string>
     <string name="com_parse_ui_facebook_login_failed_toast">Falha ao entrar com o Facebook</string>
-    <string name="com_parse_ui_twitter_login_failed_toast">Falha ao entrar com o Twitter</string>
     <plurals name="com_parse_ui_password_too_short_toast">
         <item quantity="one">A senha deve ter ao menos %d caractere</item>
         <item quantity="other">A senha deve ter ao menos %d caracteres</item>
@@ -29,15 +25,13 @@
     <string name="com_parse_ui_username_taken_toast">Usuário já existe. Por favor, escolha outro.</string>
     <string name="com_parse_ui_reenter_password_toast">Por favor, digite sua senha novamente</string>
     <string name="com_parse_ui_mismatch_confirm_password_toast">Senhas não correspondem. Por favor, tente novamente.</string>
-    <string name="com_parse_ui_no_email_toast">Por favor, digite seu email</string>
     <string name="com_parse_ui_invalid_email_toast">Email inválido. Por favor, corrija-o e tente novamente.</string>
     <string name="com_parse_ui_email_taken_toast">Email já utilizado. Por favor, redefina sua senha em vez de criar uma nova conta.</string>
-    <string name="com_parse_ui_no_name_toast">Por favor, digite seu nome</string>
     <string name="com_parse_ui_signup_failed_unknown_toast">Não foi possível cadastrar. Por favor, tente novamente mais tarde.</string>
     <string name="com_parse_ui_login_help_instructions">DIGITE SEU EMAIL</string>
     <string name="com_parse_ui_login_help_email_input_hint">EMAIL DO USUÁRIO</string>
     <string name="com_parse_ui_login_help_submit_button_label">REDEFINIR SENHA</string>
-    <string name="com_parse_ui_login_help_login_again_button_label">Voltar ao Login</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">VOLTAR AO LOGIN</string>
     <string name="com_parse_ui_login_help_submit_failed_unknown">Falha ao redefinir senha. Por favor, tente novamente.</string>
     <string name="com_parse_ui_login_help_email_sent">Por favor, verifique seu email para instruções sobre como acessar sua conta.</string>
 </resources>
