@@ -2,7 +2,6 @@
 
     <string name="parse_app_name">SWIPES</string>
     <string name="com_parse_ui_progress_dialog_text">Loading&#8230;</string>
-    <string name="com_parse_ui_username_input_hint">USERNAME</string>
     <string name="com_parse_ui_password_input_hint">PASSWORD</string>
     <string name="com_parse_ui_forgot_password_button_label"><b>FORGOT PASSWORD?</b></string>
     <string name="com_parse_ui_parse_login_button_label">LOG IN</string>
@@ -11,17 +10,14 @@
     <string name="com_parse_ui_parse_signup_button_label">SIGN UP</string>
     <string name="com_parse_ui_parse_signup_description">REGISTER WITH EMAIL</string>
     <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
-    <string name="com_parse_ui_twitter_login_button_label">TWITTER</string>
     <string name="com_parse_ui_email_input_hint">USER EMAIL</string>
     <string name="com_parse_ui_confirm_password_input_hint">CONFIRM PASSWORD</string>
-    <string name="com_parse_ui_name_input_hint">NAME</string>
     <string name="com_parse_ui_create_account_button_label">CREATE ACCOUNT</string>
-    <string name="com_parse_ui_no_username_toast">Please enter your username</string>
+    <string name="com_parse_ui_no_email_toast">Please enter your email</string>
     <string name="com_parse_ui_no_password_toast">Please enter your password</string>
     <string name="com_parse_ui_parse_login_invalid_credentials_toast">The username and password you entered don\'t match</string>
     <string name="com_parse_ui_parse_login_failed_unknown_toast">Could not log in, please try again later</string>
     <string name="com_parse_ui_facebook_login_failed_toast">Facebook login failed</string>
-    <string name="com_parse_ui_twitter_login_failed_toast">Twitter login failed</string>
 
     <plurals name="com_parse_ui_password_too_short_toast">
         <item quantity="one">Password must be at least %d character long</item>
@@ -31,15 +27,13 @@
     <string name="com_parse_ui_username_taken_toast">Username is already taken, please choose a different one</string>
     <string name="com_parse_ui_reenter_password_toast">Please re-enter your password</string>
     <string name="com_parse_ui_mismatch_confirm_password_toast">Passwords don\'t match, please try again</string>
-    <string name="com_parse_ui_no_email_toast">Please enter your email</string>
     <string name="com_parse_ui_invalid_email_toast">Email is invalid, please correct it and try again</string>
     <string name="com_parse_ui_email_taken_toast">Email is already taken, please reset your password instead</string>
-    <string name="com_parse_ui_no_name_toast">Please enter your name</string>
     <string name="com_parse_ui_signup_failed_unknown_toast">Could not sign up, please try again later</string>
     <string name="com_parse_ui_login_help_instructions">ENTER YOUR EMAIL</string>
     <string name="com_parse_ui_login_help_email_input_hint">USER EMAIL</string>
     <string name="com_parse_ui_login_help_submit_button_label">RESET PASSWORD</string>
-    <string name="com_parse_ui_login_help_login_again_button_label">Back to Login</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">BACK TO LOGIN</string>
     <string name="com_parse_ui_login_help_submit_failed_unknown">Failed to request password reset, please try again</string>
     <string name="com_parse_ui_login_help_email_sent">Please check your email for instructions on how to access your account</string>
 
