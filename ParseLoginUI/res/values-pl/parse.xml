@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Ładowanie &#8230;</string>
+    <string name="com_parse_ui_password_input_hint">HASŁO</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>NIE PAMIĘTASZ HASŁA?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">ZALOGUJ</string>
+    <string name="com_parse_ui_parse_login_description">ZALOGUJ SIĘ LUB ZAREJESTRUJ</string>
+    <string name="com_parse_ui_parse_login_facebook_description">LUB ZALOGUJ SIĘ ZA POMOCĄ</string>
+    <string name="com_parse_ui_parse_signup_button_label">DOŁĄCZ</string>
+    <string name="com_parse_ui_parse_signup_description">ZAREJESTRUJ SIĘ ZA POMOCĄ ADRESU EMAIL</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">ADRES EMAIL UŻYTKOWNIKA</string>
+    <string name="com_parse_ui_confirm_password_input_hint">POTWIERDŹ HASŁO</string>
+    <string name="com_parse_ui_create_account_button_label">UTWÓRZ KONTO</string>
+    <string name="com_parse_ui_no_email_toast">Wprowadź swój adres email</string>
+    <string name="com_parse_ui_no_password_toast">Wprowadź hasło</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">Nazwa użytkownika i hasło nie pasują do siebie</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">Nie można się zalogować, spróbuj później</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Logowanie do Facebooka nieudane</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">Hasło musi mieć conajmniej %d znak</item>
+        <item quantity="other">Hasło musi mieć conajmniej %d znaków</item>
+        <item quantity="few">Hasło musi mieć conajmniej %d znaki</item>
+        <item quantity="many">Hasło musi mieć conajmniej %d znaków</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Nazwa użytkownika jest już zajęta, wybierz inną</string>
+    <string name="com_parse_ui_reenter_password_toast">Wprowadź ponownie hasło</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Hasła nie pasują do siebie, spróbuj jeszcze raz</string>
+    <string name="com_parse_ui_invalid_email_toast">Nieprawidłowy adres email, wpisz poprawny i spróbuj jeszcze raz</string>
+    <string name="com_parse_ui_email_taken_toast">Adres email jest już używany, zresetuj swoje hasło</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">Nie można zarejestrować, spróbuj ponownie później</string>
+    <string name="com_parse_ui_login_help_instructions">WPROWADŹ SWÓJ ADRES EMAIL</string>
+    <string name="com_parse_ui_login_help_email_input_hint">ADRES EMAIL UŻYTKOWNIKA</string>
+    <string name="com_parse_ui_login_help_submit_button_label">ZRESETUJ HASŁO</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">COFNIJ DO LOGOWANIA</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Nie udało się zrealizować żadania resetu hasła, spróbuj ponownie później</string>
+    <string name="com_parse_ui_login_help_email_sent">Sprawdź pocztę, gdzie znajdziesz instrukcję dostępu do Twojego konta</string>
+</resources>
