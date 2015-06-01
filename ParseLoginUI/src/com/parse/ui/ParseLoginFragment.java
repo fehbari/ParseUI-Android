@@ -22,9 +22,12 @@
 package com.parse.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,6 +49,7 @@ import com.parse.twitter.Twitter;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Locale;
 
 /**
  * Fragment for the user login screen.
@@ -101,6 +105,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         parseSignupButton = (Button) v.findViewById(R.id.parse_signup_button);
         facebookLoginButton = (Button) v.findViewById(R.id.facebook_login);
         twitterLoginButton = (Button) v.findViewById(R.id.twitter_login);
+        View parseSocialContainer = v.findViewById(R.id.parse_social_buttons);
 
         setupRippleEffect();
 
@@ -112,6 +117,11 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         }
         if (allowTwitterLogin()) {
             setUpTwitterLogin();
+        }
+
+        if (isChina()) {
+            // Hide Facebook and Twitter login in China.
+            parseSocialContainer.setVisibility(View.GONE);
         }
 
         return v;
@@ -416,6 +426,8 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
             return false;
         }
 
+        if (isChina()) return false;
+
         if (facebookLoginButton == null) {
             debugLog(R.string.com_parse_ui_login_warning_disabled_facebook_login);
             return false;
@@ -429,6 +441,8 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
             return false;
         }
 
+        if (isChina()) return false;
+
         if (twitterLoginButton == null) {
             debugLog(R.string.com_parse_ui_login_warning_disabled_twitter_login);
             return false;
@@ -439,6 +453,33 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
 
     private void loginSuccess(String email) {
         onLoginSuccessListener.onLoginSuccess(email);
+    }
+
+    private boolean isChina() {
+        boolean isChina = false;
+        boolean isTaiwan = false;
+
+        // Try to check country with the SIM card.
+        try {
+            TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+            String countryIso = manager.getSimCountryIso();
+
+            // Check country code of SIM card.
+            if (countryIso != null) {
+                isChina = countryIso.equals("CN") || countryIso.equals("CHN");
+                isTaiwan = countryIso.equals("TW") || countryIso.equals("TWN");
+            }
+        } catch (Exception e) {
+            Log.e("ParseLoginFragment", "Error retrieving country code with SIM card.", e);
+        }
+
+        // Fallback to locale check if needed.
+        if (!isChina && !isTaiwan) {
+            isChina = Locale.getDefault().getCountry().equals("CN");
+            isTaiwan = Locale.getDefault().getCountry().equals("TW");
+        }
+
+        return isChina || isTaiwan;
     }
 
 }
