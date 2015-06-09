@@ -1,12 +1,12 @@
 apply plugin: 'android-library'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         minSdkVersion 12
-        targetSdkVersion 21
+        targetSdkVersion 22
     }
 
     sourceSets {
@@ -20,6 +20,6 @@ android {
 
 dependencies {
     compile 'com.facebook.android:facebook-android-sdk:3.19.1'
-    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:support-v4:22.2.0'
     compile fileTree(dir: 'libs', include: '*.jar')
 }
