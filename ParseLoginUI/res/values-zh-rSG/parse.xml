@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">稍等&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">密码</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>忘记密码？</b></string>
+    <string name="com_parse_ui_parse_login_button_label">登录</string>
+    <string name="com_parse_ui_parse_login_description">登录或者注册</string>
+    <string name="com_parse_ui_parse_login_facebook_description">用以下方式登录</string>
+    <string name="com_parse_ui_parse_signup_button_label">注册</string>
+    <string name="com_parse_ui_parse_signup_description">使用Email 注册</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">用户邮箱</string>
+    <string name="com_parse_ui_confirm_password_input_hint">确认密码</string>
+    <string name="com_parse_ui_create_account_button_label">创建账户</string>
+    <string name="com_parse_ui_no_email_toast">请输入Email</string>
+    <string name="com_parse_ui_no_password_toast">请输入密码</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">您输入的用户名和密码不匹配</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">无法登录，请稍候重试</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Facebook 登录失败</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="other">密码必须至少有 %d 个字符</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">用户名已经被使用，请选择其他的用户名</string>
+    <string name="com_parse_ui_reenter_password_toast">请重新输入密码</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">密码不匹配，请重试</string>
+    <string name="com_parse_ui_invalid_email_toast">Email 无效，请更正并重试</string>
+    <string name="com_parse_ui_email_taken_toast">Email 已经被注册，请重置您的密码</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">无法注册，请稍候重试</string>
+    <string name="com_parse_ui_login_help_instructions">输入您的EMAIL</string>
+    <string name="com_parse_ui_login_help_email_input_hint">用户邮箱</string>
+    <string name="com_parse_ui_login_help_submit_button_label">重置密码</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">退出登录</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">重置密码失败，请重试</string>
+    <string name="com_parse_ui_login_help_email_sent">请检查你的邮箱来查看如何访问你的账户</string>
+</resources>

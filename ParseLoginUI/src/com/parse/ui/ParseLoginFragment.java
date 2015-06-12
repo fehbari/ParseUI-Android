@@ -457,7 +457,6 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
 
     private boolean isChina() {
         boolean isChina = false;
-        boolean isTaiwan = false;
 
         // Try to check country with the SIM card.
         try {
@@ -467,19 +466,17 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
             // Check country code of SIM card.
             if (countryIso != null) {
                 isChina = countryIso.equals("CN") || countryIso.equals("CHN");
-                isTaiwan = countryIso.equals("TW") || countryIso.equals("TWN");
             }
         } catch (Exception e) {
             Log.e("ParseLoginFragment", "Error retrieving country code with SIM card.", e);
         }
 
         // Fallback to locale check if needed.
-        if (!isChina && !isTaiwan) {
+        if (!isChina) {
             isChina = Locale.getDefault().getCountry().equals("CN");
-            isTaiwan = Locale.getDefault().getCountry().equals("TW");
         }
 
-        return isChina || isTaiwan;
+        return isChina;
     }
 
 }
