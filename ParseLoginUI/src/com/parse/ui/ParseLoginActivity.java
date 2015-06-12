@@ -149,14 +149,14 @@ public class ParseLoginActivity extends FragmentActivity implements
      * Called when the user clicked the log in button on the login form.
      */
     @Override
-    public void onLoginHelpClicked() {
+    public void onLoginHelpClicked(String username) {
         // Show the login help form for resetting the user's password.
         // Keep the transaction on the back stack so that if the user clicks
         // the back button, they are brought back to the login form.
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out,
                 R.anim.fade_in, R.anim.fade_out);
-        transaction.replace(fragmentContainer, ParseLoginHelpFragment.newInstance(configOptions));
+        transaction.replace(fragmentContainer, ParseLoginHelpFragment.newInstance(configOptions, username));
         transaction.addToBackStack(null);
         transaction.commit();
     }

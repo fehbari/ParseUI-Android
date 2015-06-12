@@ -45,6 +45,8 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
         public void onLoginHelpSuccess();
     }
 
+    public static final String USERNAME = "com.parse.ui.ParseLoginHelpFragment.USERNAME";
+
     private TextView instructionsTextView;
     private EditText emailField;
     private Button submitButton;
@@ -55,9 +57,11 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
 
     private static final String LOG_TAG = "ParseLoginHelpFragment";
 
-    public static ParseLoginHelpFragment newInstance(Bundle configOptions) {
+    public static ParseLoginHelpFragment newInstance(Bundle configOptions, String username) {
         ParseLoginHelpFragment loginHelpFragment = new ParseLoginHelpFragment();
-        loginHelpFragment.setArguments(configOptions);
+        Bundle args = new Bundle(configOptions);
+        args.putString(ParseLoginHelpFragment.USERNAME, username);
+        loginHelpFragment.setArguments(args);
         return loginHelpFragment;
     }
 
@@ -66,6 +70,8 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
                              Bundle savedInstanceState) {
         config = ParseLoginConfig.fromBundle(getArguments(), getActivity());
 
+        Bundle args = getArguments();
+
         View v = inflater.inflate(R.layout.com_parse_ui_parse_login_help_fragment,
                 parent, false);
         ParseTextView appLogo = (ParseTextView) v.findViewById(R.id.app_logo);
@@ -73,6 +79,10 @@ public class ParseLoginHelpFragment extends ParseLoginFragmentBase implements On
                 .findViewById(R.id.login_help_instructions);
         emailField = (EditText) v.findViewById(R.id.login_help_email_input);
         submitButton = (Button) v.findViewById(R.id.login_help_submit);
+
+        String username = (String) args.getString(USERNAME);
+
+        emailField.setText(username);
 
         submitButton.setOnClickListener(this);
 

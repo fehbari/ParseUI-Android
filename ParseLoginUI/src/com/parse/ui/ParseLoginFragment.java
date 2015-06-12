@@ -28,10 +28,12 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.InputType;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -59,7 +61,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
     public interface ParseLoginFragmentListener {
         public void onSignUpClicked(String username, String password);
 
-        public void onLoginHelpClicked();
+        public void onLoginHelpClicked(String username);
     }
 
     private static final String LOG_TAG = "ParseLoginFragment";
@@ -184,47 +186,7 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         parseLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String username = usernameField.getText().toString().replaceAll("\\s+", "").toLowerCase();
-                usernameField.setText(username);
-                String password = passwordField.getText().toString();
-
-                if (username.length() == 0) {
-                    showToast(R.string.com_parse_ui_no_email_toast);
-                } else if (password.length() == 0) {
-                    showToast(R.string.com_parse_ui_no_password_toast);
-                } else {
-                    loadingStart(true);
-                    ParseUser.logInInBackground(username, password, new LogInCallback() {
-                        @Override
-                        public void done(ParseUser user, ParseException e) {
-                            if (isActivityDestroyed()) {
-                                return;
-                            }
-
-                            if (user != null) {
-                                loadingFinish();
-                                loginSuccess(username);
-                            } else {
-                                loadingFinish();
-                                if (e != null) {
-                                    debugLog(getString(R.string.com_parse_ui_login_warning_parse_login_failed) +
-                                            e.toString());
-                                    if (e.getCode() == ParseException.OBJECT_NOT_FOUND) {
-                                        if (config.getParseLoginInvalidCredentialsToastText() != null) {
-                                            showToast(config.getParseLoginInvalidCredentialsToastText());
-                                        } else {
-                                            showToast(R.string.com_parse_ui_parse_login_invalid_credentials_toast);
-                                        }
-                                        passwordField.selectAll();
-                                        passwordField.requestFocus();
-                                    } else {
-                                        showToast(R.string.com_parse_ui_parse_login_failed_unknown_toast);
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
+                performLogin();
             }
         });
 
@@ -235,10 +197,20 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         parseSignupButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameField.getText().toString();
+                String username = usernameField.getText().toString().replaceAll("\\s+", "").toLowerCase();
                 String password = passwordField.getText().toString();
 
                 loginFragmentListener.onSignUpClicked(username, password);
+            }
+        });
+
+        passwordField.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    performLogin();
+                }
+                return true;
             }
         });
 
@@ -249,9 +221,54 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         parseLoginHelpButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginFragmentListener.onLoginHelpClicked();
+                String username = usernameField.getText().toString().replaceAll("\\s+", "").toLowerCase();
+                loginFragmentListener.onLoginHelpClicked(username);
             }
         });
+    }
+
+    private void performLogin() {
+        final String username = usernameField.getText().toString().replaceAll("\\s+", "").toLowerCase();
+        usernameField.setText(username);
+        String password = passwordField.getText().toString();
+
+        if (username.length() == 0) {
+            showToast(R.string.com_parse_ui_no_email_toast);
+        } else if (password.length() == 0) {
+            showToast(R.string.com_parse_ui_no_password_toast);
+        } else {
+            loadingStart(true);
+            ParseUser.logInInBackground(username, password, new LogInCallback() {
+                @Override
+                public void done(ParseUser user, ParseException e) {
+                    if (isActivityDestroyed()) {
+                        return;
+                    }
+
+                    if (user != null) {
+                        loadingFinish();
+                        loginSuccess(username);
+                    } else {
+                        loadingFinish();
+                        if (e != null) {
+                            debugLog(getString(R.string.com_parse_ui_login_warning_parse_login_failed) +
+                                    e.toString());
+                            if (e.getCode() == ParseException.OBJECT_NOT_FOUND) {
+                                if (config.getParseLoginInvalidCredentialsToastText() != null) {
+                                    showToast(config.getParseLoginInvalidCredentialsToastText());
+                                } else {
+                                    showToast(R.string.com_parse_ui_parse_login_invalid_credentials_toast);
+                                }
+                                passwordField.selectAll();
+                                passwordField.requestFocus();
+                            } else {
+                                showToast(R.string.com_parse_ui_parse_login_failed_unknown_toast);
+                            }
+                        }
+                    }
+                }
+            });
+        }
     }
 
     private void setUpFacebookLogin() {
