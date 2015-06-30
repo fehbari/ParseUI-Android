@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Nahrávání&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">Heslo</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>Zapomněli jste heslo?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">PŘIHLÁŠENÍ</string>
+    <string name="com_parse_ui_parse_login_description">PŘIHLÁŠENÍ NEBO REGISTRACE</string>
+    <string name="com_parse_ui_parse_login_facebook_description">NEBO PŘIHLÁŠENÍ POMOCÍ</string>
+    <string name="com_parse_ui_parse_signup_button_label">PŘIHLÁŠENÍ</string>
+    <string name="com_parse_ui_parse_signup_description">REGISTRACE POMOCÍ EMAILU</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">EMAIL UŽIVATELE</string>
+    <string name="com_parse_ui_confirm_password_input_hint">POTVRĎTE HESLO</string>
+    <string name="com_parse_ui_create_account_button_label">VYTVOŘIT ÚČET</string>
+    <string name="com_parse_ui_no_email_toast">Vložte svůj email</string>
+    <string name="com_parse_ui_no_password_toast">Prosím, zadejte své heslo</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">Zadané uživatelské jméno nebo heslo nebylo nalezeno</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">Přihlášení se nezdařilo, zkuste prosím později</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Přihlášení pomocí účtu Facebook se nezdařilo</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">Heslo musí obsahovat minimálne %d znaků</item>
+        <item quantity="other">Heslo musí obsahovat minimálne %d znaků</item>
+        <item quantity="few"></item>
+        <item quantity="many"></item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Uživatelské jméno již existuje, prosím vyberte jíné</string>
+    <string name="com_parse_ui_reenter_password_toast">Vložte znovu své heslo</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Heslo neodpovídá uživatelskému jménu, zkuste prosím znovu zadat heslo</string>
+    <string name="com_parse_ui_invalid_email_toast">Emailová adresa je neplatná. Prosím opravte ji a zkuste znovu</string>
+    <string name="com_parse_ui_email_taken_toast">Email je již používán, obnovit zapomenuté heslo?</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">Zástupné symboly</string>
+    <string name="com_parse_ui_login_help_instructions">VLOŽTE SVŮJ EMAIL</string>
+    <string name="com_parse_ui_login_help_email_input_hint">EMAIL UŽIVATELE</string>
+    <string name="com_parse_ui_login_help_submit_button_label">OBNOVIT HESLO</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">ZPĚT K PŘIHLÁŠENÍ</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Obnovení hesla se nezdařilo, zkuste to prosím znovu</string>
+    <string name="com_parse_ui_login_help_email_sent">Zkontrolujte si prosím svůj e-mail s návodem, jak získat přístup k vašemu účtu</string>
+</resources>

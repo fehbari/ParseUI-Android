@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Caricamento&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">PASSWORD</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>PASSWORD DIMENTICATA?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">Log In</string>
+    <string name="com_parse_ui_parse_login_description">LOG IN O REGISTRATI</string>
+    <string name="com_parse_ui_parse_login_facebook_description">O LOG IN CON</string>
+    <string name="com_parse_ui_parse_signup_button_label">ISCRIVITI</string>
+    <string name="com_parse_ui_parse_signup_description">REGISTRA LA TUA EMAIL</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">EMAIL UTENTE</string>
+    <string name="com_parse_ui_confirm_password_input_hint">CONFERMA PASSWORD</string>
+    <string name="com_parse_ui_create_account_button_label">CREA ACCOUNT</string>
+    <string name="com_parse_ui_no_email_toast">Inserisci la tua email</string>
+    <string name="com_parse_ui_no_password_toast">Per favore inserisci la tua password</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">Username e password inseriti non sono corretti</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">Log in fallito, prova di nuovo più tardi</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Login Facebook fallito</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">La password deve essere di almeno %d carattere</item>
+        <item quantity="other">La password deve essere di almeno %d caratteri</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Username già esistente, scegli un nome diverso</string>
+    <string name="com_parse_ui_reenter_password_toast">Inserisci la password di nuovo</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Password non corretta, prova di nuovo</string>
+    <string name="com_parse_ui_invalid_email_toast">Email non valida, correggi e prova di nuovo</string>
+    <string name="com_parse_ui_email_taken_toast">Email già utilizzata, resetta la tua password</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">Iscrizione fallita, prova di nuovo più tardi</string>
+    <string name="com_parse_ui_login_help_instructions">INSERISCI LA TUA EMAIL</string>
+    <string name="com_parse_ui_login_help_email_input_hint">EMAIL UTENTE</string>
+    <string name="com_parse_ui_login_help_submit_button_label">CAMBIA PASSWORD</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">TORNA AL LOGIN</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Cambio password fallito, prova di nuovo</string>
+    <string name="com_parse_ui_login_help_email_sent">Controlla la tua email per le istruzioni su come accedere al tuo account</string>
+</resources>

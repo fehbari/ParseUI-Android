@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Cargando&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">CONTRASEÑA</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>¿OLVIDASTE LA CONTRASEÑA?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">INICIAR SESIÓN</string>
+    <string name="com_parse_ui_parse_login_description">INICIA SESIÓN O REGISTRATE</string>
+    <string name="com_parse_ui_parse_login_facebook_description">O INICIA SESIÓN CON</string>
+    <string name="com_parse_ui_parse_signup_button_label">REGISTRATE</string>
+    <string name="com_parse_ui_parse_signup_description">REGISTRATE CON CORREO</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">CORREO DE USUARIO</string>
+    <string name="com_parse_ui_confirm_password_input_hint">CONFIRMAR CONTRASEÑA</string>
+    <string name="com_parse_ui_create_account_button_label">CREAR CUENTA</string>
+    <string name="com_parse_ui_no_email_toast">Por favor introduce tu correo</string>
+    <string name="com_parse_ui_no_password_toast">Por favor introduce tu contraseña</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">El nombre de usuario y contraseña introducidos son incorrectos</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">No se pudo iniciar, por favor intenta de nuevo mas tarde</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">"Error al iniciar la sesión con Facebook "</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">La contraseña debe ser de al menos %d carácter de largo</item>
+        <item quantity="other">La contraseña debe ser de al menos %d caracteres de largo</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Nombre de usuario en uso, por favor escoge uno diferente</string>
+    <string name="com_parse_ui_reenter_password_toast">Por favor vuelve a ingresar tu contraseña</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Las contraseñas no coinciden, por favor intentalo de nuevo</string>
+    <string name="com_parse_ui_invalid_email_toast">Correo incorrecto, por favor corrigelo  y prueba de nuevo</string>
+    <string name="com_parse_ui_email_taken_toast">Correo ya registrado, por favor restablece tu contraseña</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">No se pudo registrar, por favor intenta de nuevo mas tarde</string>
+    <string name="com_parse_ui_login_help_instructions">INTRODUCE TU CORREO</string>
+    <string name="com_parse_ui_login_help_email_input_hint">CORREO DE USUARIO</string>
+    <string name="com_parse_ui_login_help_submit_button_label">RESTABLECER CONTRASEÑA</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">VOLVER A REGISTRO</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Error al solicitar restablecimiento de contraseña, por favor, inténtalo de nuevo</string>
+    <string name="com_parse_ui_login_help_email_sent">Verifique su correo con instrucciones para el acceso a su cuenta</string>
+</resources>
