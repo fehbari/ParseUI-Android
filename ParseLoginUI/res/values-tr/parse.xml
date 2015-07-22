@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="parse_app_name">SWIPES</string>
+    <string name="com_parse_ui_progress_dialog_text">Yükleniyor&#8230;</string>
+    <string name="com_parse_ui_password_input_hint">ŞİFRE</string>
+    <string name="com_parse_ui_forgot_password_button_label"><b>ŞİFRENİZİ Mİ UNUTTUNUZ?</b></string>
+    <string name="com_parse_ui_parse_login_button_label">OTURUM AÇIN</string>
+    <string name="com_parse_ui_parse_login_description">OTURUM AÇIN VEYA KAYDOLUN</string>
+    <string name="com_parse_ui_parse_login_facebook_description">VEYA OTURUM AÇMAK İÇİN ŞUNU KULLANIN</string>
+    <string name="com_parse_ui_parse_signup_button_label">KAYDOLUN</string>
+    <string name="com_parse_ui_parse_signup_description">E-POSTA İLE KAYDOLUN</string>
+    <string name="com_parse_ui_facebook_login_button_label">FACEBOOK</string>
+    <string name="com_parse_ui_email_input_hint">KULLANICI E-POSTA ADRESİ</string>
+    <string name="com_parse_ui_confirm_password_input_hint">ŞİFRENİZİ ONAYLAYIN</string>
+    <string name="com_parse_ui_create_account_button_label">HESAP OLUŞTURUN</string>
+    <string name="com_parse_ui_no_email_toast">Lütfen e-posta adresinizi girin</string>
+    <string name="com_parse_ui_no_password_toast">Lütfen şifrenizi girin</string>
+    <string name="com_parse_ui_parse_login_invalid_credentials_toast">Girmiş olduğunuz kullanıcı adı ve şifre eşleşmedi</string>
+    <string name="com_parse_ui_parse_login_failed_unknown_toast">Oturum açılamadı, lütfen daha sonra tekrar deneyin</string>
+    <string name="com_parse_ui_facebook_login_failed_toast">Facebook ile oturum açma başarısız oldu</string>
+    <plurals name="com_parse_ui_password_too_short_toast">
+        <item quantity="one">Şifreniz en az %d karakter uzunlukta olmalıdır</item>
+        <item quantity="other">Şifreniz en az %d karakter uzunlukta olmalıdır</item>
+    </plurals>
+    <string name="com_parse_ui_username_taken_toast">Kullanıcı adı zaten alınmış, lütfen farklı bir tane seçin</string>
+    <string name="com_parse_ui_reenter_password_toast">Lütfen şifrenizi tekrar girin</string>
+    <string name="com_parse_ui_mismatch_confirm_password_toast">Şifre eşleşmiyor, lütfen tekrar deneyin</string>
+    <string name="com_parse_ui_invalid_email_toast">E-posta adresi geçersiz, lütfen düzeltip tekrar deneyin</string>
+    <string name="com_parse_ui_email_taken_toast">E-posta adresi zaten alınmış, lütfen şifrenizi sıfırlayın</string>
+    <string name="com_parse_ui_signup_failed_unknown_toast">Kayıt işlemi başarısız, lütfen daha sonra tekrar deneyin</string>
+    <string name="com_parse_ui_login_help_instructions">E-POSTA ADRESİNİZİ GİRİN</string>
+    <string name="com_parse_ui_login_help_email_input_hint">KULLANICI E-POSTA ADRESİ</string>
+    <string name="com_parse_ui_login_help_submit_button_label">ŞİFREYİ SIFIRLA</string>
+    <string name="com_parse_ui_login_help_login_again_button_label">TEKRAR OTURUM AÇMAYI DENE</string>
+    <string name="com_parse_ui_login_help_submit_failed_unknown">Şifre sıfırlama isteği başarısız, lütfen tekrar deneyin</string>
+    <string name="com_parse_ui_login_help_email_sent">Lütfen hesabınıza erişmek için e-posta adresinize gönderilen talimatları takip edin</string>
+</resources>
