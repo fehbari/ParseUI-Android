@@ -4,7 +4,7 @@
     <string name="com_parse_ui_progress_dialog_text">Caricamento&#8230;</string>
     <string name="com_parse_ui_password_input_hint">PASSWORD</string>
     <string name="com_parse_ui_forgot_password_button_label"><b>PASSWORD DIMENTICATA?</b></string>
-    <string name="com_parse_ui_parse_login_button_label">Log In</string>
+    <string name="com_parse_ui_parse_login_button_label">LOG IN</string>
     <string name="com_parse_ui_parse_login_description">LOG IN O REGISTRATI</string>
     <string name="com_parse_ui_parse_login_facebook_description">O LOG IN CON</string>
     <string name="com_parse_ui_parse_signup_button_label">ISCRIVITI</string>
