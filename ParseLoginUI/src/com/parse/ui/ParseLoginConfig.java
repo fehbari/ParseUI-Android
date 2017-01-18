@@ -56,7 +56,7 @@ public class ParseLoginConfig {
   // For internally serializing to/from string array (the public analog above is for resource from activity meta-data).
   private static final String FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY = "com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY";
 
-  private static final String LOG_TAG = "com.parse.ui.ParseLoginConfig";
+  private static final String LOG_TAG = "ParseLoginConfig";
 
   // Use boxed types so that we can differentiate between a setting not set,
   // versus its default value.  This is useful for merging options set from code

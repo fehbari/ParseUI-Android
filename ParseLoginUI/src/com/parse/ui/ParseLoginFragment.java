@@ -38,9 +38,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.facebook.Request;
-import com.facebook.Response;
-import com.facebook.model.GraphUser;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
@@ -48,6 +48,9 @@ import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.twitter.Twitter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -281,11 +284,11 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
         facebookLoginButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingStart(true);
                 Collection<String> permissions = config.getFacebookLoginPermissions();
                 if (permissions == null) permissions = new ArrayList<>();
                 permissions.add("email");
-                ParseFacebookUtils.logIn(permissions, getActivity(), new LogInCallback() {
+
+                ParseFacebookUtils.logInWithReadPermissionsInBackground(getActivity(), permissions, new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException e) {
                         if (isActivityDestroyed()) {
@@ -293,58 +296,66 @@ public class ParseLoginFragment extends ParseLoginFragmentBase {
                         }
 
                         if (user == null) {
-                            loadingFinish();
                             if (e != null) {
                                 showToast(R.string.com_parse_ui_facebook_login_failed_toast);
                                 debugLog(getString(R.string.com_parse_ui_login_warning_facebook_login_failed) +
                                         e.toString());
                             }
-                        } else /*if (user.isNew())*/ {
-                            Request.newMeRequest(ParseFacebookUtils.getSession(),
-                                    new Request.GraphUserCallback() {
+                        } else {
+                            loadingStart();
+
+                            GraphRequest request = GraphRequest.newMeRequest(
+                                    AccessToken.getCurrentAccessToken(),
+                                    new GraphRequest.GraphJSONObjectCallback() {
                                         @Override
-                                        public void onCompleted(GraphUser fbUser,
-                                                                Response response) {
-                                          /*
-                                            If we were able to successfully retrieve the Facebook
-                                            email, set it on the "email" and "username" fields.
-                                            Also set the gender if we can read it.
-                                          */
+                                        public void onCompleted(
+                                                JSONObject object,
+                                                GraphResponse response) {
+                                            /*
+                                                If we were able to successfully retrieve the Facebook
+                                                email, set it on the "email" and "username" fields.
+                                                Also set the gender if we can read it.
+                                            */
                                             ParseUser parseUser = ParseUser.getCurrentUser();
-                                            if (fbUser != null && parseUser != null) {
-                                                final String email = (String) fbUser.getProperty("email");
-                                                if (email != null && !email.isEmpty()) {
-                                                    parseUser.put("email", email);
-                                                    parseUser.put("username", email);
+                                            if (object != null && parseUser != null) {
+                                                try {
+                                                    final String email = object.getString("email");
+                                                    if (email != null && !email.isEmpty()) {
 
-                                                    String gender = (String) fbUser.getProperty("gender");
-                                                    if (gender != null && !gender.isEmpty()) {
-                                                        parseUser.put("gender", gender);
-                                                    }
+                                                        parseUser.put("email", email);
+                                                        parseUser.put("username", email);
 
-                                                    parseUser.saveInBackground(new SaveCallback() {
-                                                        @Override
-                                                        public void done(ParseException e) {
-                                                            if (e != null) {
-                                                                debugLog(getString(
-                                                                        R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
-                                                                        e.toString());
-                                                            }
-                                                            loginSuccess(email);
+                                                        String gender = object.getString("gender");
+                                                        if (gender != null && !gender.isEmpty()) {
+                                                            parseUser.put("gender", gender);
                                                         }
-                                                    });
-                                                } else {
+
+                                                        parseUser.saveInBackground(new SaveCallback() {
+                                                            @Override
+                                                            public void done(ParseException e) {
+                                                                if (e != null) {
+                                                                    debugLog(getString(
+                                                                            R.string.com_parse_ui_login_warning_facebook_login_user_update_failed) +
+                                                                            e.toString());
+                                                                }
+                                                                loadingFinish();
+                                                                loginSuccess(email);
+                                                            }
+                                                        });
+                                                    }
+                                                } catch (JSONException e) {
+                                                    Log.e(LOG_TAG, "Failed to retrieve Facebook user properties.", e);
                                                     loadingFinish();
                                                 }
-                                            } else {
-                                                loadingFinish();
                                             }
                                         }
-                                    }
-                            ).executeAsync();
-                        } /*else {
-                                    loginSuccess();
-                                }*/
+                                    });
+
+                            Bundle parameters = new Bundle();
+                            parameters.putString("fields", "email,gender");
+                            request.setParameters(parameters);
+                            request.executeAsync();
+                        }
                     }
                 });
             }

@@ -7,6 +7,12 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
-    <application />
+    <application>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    </application>
 
 </manifest>
