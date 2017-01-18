@@ -2,8 +2,6 @@
 
     <string name="com_parse_ui_name_input_hint">NAME</string>
     <string name="com_parse_ui_username_input_hint">USERNAME</string>
-    <string name="com_parse_ui_twitter_login_button_label">TWITTER</string>
-    <string name="com_parse_ui_twitter_login_failed_toast">Twitter login failed</string>
     <string name="com_parse_ui_no_username_toast">Please enter your username</string>
     <string name="com_parse_ui_no_name_toast">Please enter your name</string>
 

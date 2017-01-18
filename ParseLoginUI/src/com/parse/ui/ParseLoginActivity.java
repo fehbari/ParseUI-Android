@@ -38,13 +38,13 @@ import com.parse.Parse;
 import com.parse.ParseFacebookUtils;
 
 /**
- * Encapsulates the Parse login flow. The user can log in by username/password,
- * Facebook, and Twitter. If the user is new, they can also sign up. Under
+ * Encapsulates the Parse login flow. The user can log in by username/password
+ * and Facebook. If the user is new, they can also sign up. Under
  * normal operation, the user can only exit this activity by either successfully
  * logging in, or backing out of the login/signup flow.
  * <p/>
- * If your app allows Facebook/Twitter login, you must initialize
- * ParseFacebookUtils/ParseTwitterUtils prior to starting this activity.
+ * If your app allows Facebook login, you must initialize
+ * ParseFacebookUtils prior to starting this activity.
  * <p/>
  * The caller activity should expect to receive one of the following resultCode
  * values:

@@ -50,8 +50,6 @@ public class ParseLoginConfig {
   public static final String FACEBOOK_LOGIN_ENABLED = "com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_ENABLED";
   public static final String FACEBOOK_LOGIN_BUTTON_TEXT = "com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_BUTTON_TEXT";
   public static final String FACEBOOK_LOGIN_PERMISSIONS = "com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_PERMISSIONS";
-  public static final String TWITTER_LOGIN_ENABLED = "com.parse.ui.ParseLoginActivity.TWITTER_LOGIN_ENABLED";
-  public static final String TWITTER_LOGIN_BUTTON_TEXT = "com.parse.ui.ParseLoginActivity.TWITTER_LOGIN_BUTTON_TEXT";
 
   // For internally serializing to/from string array (the public analog above is for resource from activity meta-data).
   private static final String FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY = "com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY";
@@ -74,9 +72,6 @@ public class ParseLoginConfig {
   private Boolean facebookLoginEnabled;
   private CharSequence facebookLoginButtonText;
   private Collection<String> facebookLoginPermissions;
-
-  private Boolean twitterLoginEnabled;
-  private CharSequence twitterLoginButtonText;
 
   public Integer getAppLogo() {
     return appLogo;
@@ -195,26 +190,6 @@ public class ParseLoginConfig {
     }
   }
 
-  public boolean isTwitterLoginEnabled() {
-    if (twitterLoginEnabled != null) {
-      return twitterLoginEnabled;
-    } else {
-      return false;
-    }
-  }
-
-  public void setTwitterLoginEnabled(boolean twitterLoginEnabled) {
-    this.twitterLoginEnabled = twitterLoginEnabled;
-  }
-
-  public CharSequence getTwitterLoginButtonText() {
-    return twitterLoginButtonText;
-  }
-
-  public void setTwitterLoginButtonText(CharSequence twitterLoginButtonText) {
-    this.twitterLoginButtonText = twitterLoginButtonText;
-  }
-
   /**
    * Converts this object into a Bundle object. For options that are not
    * explicitly set, we do not include them in the Bundle so that this bundle
@@ -269,13 +244,6 @@ public class ParseLoginConfig {
     if (facebookLoginPermissions != null) {
       bundle.putStringArray(FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY,
           facebookLoginPermissions.toArray(new String[0]));
-    }
-
-    if (twitterLoginEnabled != null) {
-      bundle.putBoolean(TWITTER_LOGIN_ENABLED, twitterLoginEnabled);
-    }
-    if (twitterLoginButtonText != null) {
-      bundle.putCharSequence(TWITTER_LOGIN_BUTTON_TEXT, twitterLoginButtonText);
     }
 
     return bundle;
@@ -350,14 +318,6 @@ public class ParseLoginConfig {
       // For converting from a bundle produced by this class's toBundle()
       config.setFacebookLoginPermissions(stringArrayToCollection(bundle
           .getStringArray(FACEBOOK_LOGIN_PERMISSIONS_STRING_ARRAY)));
-    }
-
-    if (keys.contains(TWITTER_LOGIN_ENABLED)) {
-      config.setTwitterLoginEnabled(bundle.getBoolean(TWITTER_LOGIN_ENABLED));
-    }
-    if (keys.contains(TWITTER_LOGIN_BUTTON_TEXT)) {
-      config.setTwitterLoginButtonText(bundle
-          .getCharSequence(TWITTER_LOGIN_BUTTON_TEXT));
     }
 
     return config;

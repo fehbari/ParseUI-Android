@@ -25,7 +25,6 @@ sample projects, you need to do the following:
 5. Place the following in `res/values/strings.xml` of each sample project:
   * Parse application id and client key
   * Facebook application id
-  * Twitter consumer key and consumer secret
 6. Build and run the sample project using Android Studio or Eclipse.
 
 ## Documentation

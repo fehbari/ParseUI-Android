@@ -21,10 +21,10 @@
 
 package com.parse.ui;
 
-import java.util.Collection;
-
 import android.content.Context;
 import android.content.Intent;
+
+import java.util.Collection;
 
 public class ParseLoginBuilder {
 
@@ -258,44 +258,6 @@ public class ParseLoginBuilder {
   public ParseLoginBuilder setFacebookLoginPermissions(
       Collection<String> permissions) {
     config.setFacebookLoginPermissions(permissions);
-    return this;
-  }
-
-  /**
-   * Whether to show the Twitter login option on the login screen. Default is
-   * false.
-   *
-   * @param enabled
-   *     Whether to show the Twitter login.
-   * @return The caller instance to allow chaining.
-   */
-  public ParseLoginBuilder setTwitterLoginEnabled(boolean enabled) {
-    config.setTwitterLoginEnabled(enabled);
-    return this;
-  }
-
-  /**
-   * Customize the text on the Twitter login button.
-   *
-   * @param loginButtonText
-   *     The text to display on the Twitter login button.
-   * @return The caller instance to allow chaining.
-   */
-  public ParseLoginBuilder setTwitterLoginButtontext(
-      CharSequence loginButtonText) {
-    config.setTwitterLoginButtonText(loginButtonText);
-    return this;
-  }
-
-  /**
-   * Customize the text on the Twitter login button.
-   *
-   * @param id
-   *     The text to display on the Twitter login button.
-   * @return The caller instance to allow chaining.
-   */
-  public ParseLoginBuilder setTwitterLoginButtontext(int id) {
-    config.setTwitterLoginButtonText(maybeGetString(id));
     return this;
   }
 

@@ -28,8 +28,5 @@ dependencies {
         exclude group: 'com.parse', module: 'parse-android'
         exclude group: 'com.facebook.android', module: 'facebook-android-sdk'
     }
-    compile ('com.parse:parsetwitterutils-android:1.10.5') {
-        exclude group: 'com.parse', module: 'parse-android'
-    }
     compile fileTree(dir: 'libs', include: '*.jar')
 }
