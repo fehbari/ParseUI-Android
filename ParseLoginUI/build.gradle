@@ -1,12 +1,12 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 12
-        targetSdkVersion 22
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
     }
 
     sourceSets {
@@ -19,14 +19,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:22.2.0'
-    compile ('com.facebook.android:facebook-android-sdk:4.4.0') {
+    compile group: 'com.android.support', name: 'support-v4', version: rootProject.ext.supportLibVersion
+    compile('com.facebook.android:facebook-android-sdk:4.4.0') {
         exclude group: 'com.parse.bolts', module: 'bolts-android'
     }
     compile 'com.parse:parse-android:1.13.1'
-    compile ('com.parse:parsefacebookutils-v4-android:1.10.4@aar') {
-        exclude group: 'com.parse', module: 'parse-android'
-        exclude group: 'com.facebook.android', module: 'facebook-android-sdk'
-    }
+    compile 'com.parse:parsefacebookutils-v4-android:1.10.4@aar'
     compile fileTree(dir: 'libs', include: '*.jar')
 }
